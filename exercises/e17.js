@@ -6,8 +6,31 @@
 // NOTE: You can NOT use the array.includes() method in your code
 
 export function doesArrayInclude(array, value) {
-  // Your code goes here...
-
+    let result = false;
+    
+    // Iterate through the array
+    for (let i = 0; i < array.length; i++) {
+      
+        // Store each element in a separate array
+        let arr = [];
+        for (let j = 0; j < array[i].length; j++) {
+          arr.push(array[i][j]);
+        }
+        
+        // Check if the element is equal to the value
+        for (let n = 0; n < arr.length; n++) {
+          if (arr[n] === value) {
+            result = true;
+            break;
+          }
+        }
+        
+        if (result) {
+          break;
+        }
+    }
+    
+    return result;
 }
 
 

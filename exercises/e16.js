@@ -6,8 +6,20 @@
 // NOTE: You can NOT use the array.flat() method in your code
 
 export function flatArrays(array) {
-  // Your code goes here...
-
+    // Your code goes here...
+    let flatArray = [];
+  
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].length) {
+            for (let j = 0; j < array[i].length; j++) {
+                flatArray.push(array[i][j]);
+            }
+        } else {
+            flatArray.push(array[i]);
+        }
+    }
+  
+    return flatArray;
 }
 
 
